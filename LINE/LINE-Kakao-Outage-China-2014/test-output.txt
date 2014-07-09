@@ -1,0 +1,244 @@
+dig +short line.naver.jp
+
+; <<>> DiG 9.8.1-P1 <<>> line.naver.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52405
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;line.naver.jp.			IN	A
+
+;; ANSWER SECTION:
+line.naver.jp.		300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+naver.jp.		71845	IN	NS	ns2.naver.jp.
+naver.jp.		71845	IN	NS	ns1.naver.jp.
+naver.jp.		71845	IN	NS	adns1.naver.com.
+
+;; ADDITIONAL SECTION:
+adns1.naver.com.	71845	IN	A	125.209.248.6
+
+;; Query time: 25 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 128
+
+---
+# dig +short kakao.com
+
+; <<>> DiG 9.8.1-P1 <<>> kakao.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37416
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;kakao.com.			IN	A
+
+;; ANSWER SECTION:
+kakao.com.		300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+kakao.com.		8247	IN	NS	ns2.iwilab.com.
+kakao.com.		8247	IN	NS	ns.iwilab.com.
+
+;; Query time: 5 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 85
+
+---
+# dig +short flickr.com
+
+; <<>> DiG 9.8.1-P1 <<>> flickr.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 34689
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 5, ADDITIONAL: 5
+
+;; QUESTION SECTION:
+;flickr.com.			IN	A
+
+;; ANSWER SECTION:
+flickr.com.		300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+flickr.com.		45437	IN	NS	ns3.yahoo.com.
+flickr.com.		45437	IN	NS	ns4.yahoo.com.
+flickr.com.		45437	IN	NS	ns2.yahoo.com.
+flickr.com.		45437	IN	NS	ns5.yahoo.com.
+flickr.com.		45437	IN	NS	ns1.yahoo.com.
+
+;; ADDITIONAL SECTION:
+ns1.yahoo.com.		35462	IN	A	68.180.131.16
+ns2.yahoo.com.		35462	IN	A	68.142.255.16
+ns3.yahoo.com.		35462	IN	A	203.84.221.53
+ns4.yahoo.com.		35462	IN	A	98.138.11.157
+ns5.yahoo.com.		35462	IN	A	119.160.247.124
+
+;; Query time: 5 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 220
+
+---
+# dig +short onedrive.live.com
+
+; <<>> DiG 9.8.1-P1 <<>> onedrive.live.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15277
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 5, ADDITIONAL: 5
+
+;; QUESTION SECTION:
+;onedrive.live.com.		IN	A
+
+;; ANSWER SECTION:
+onedrive.live.com.	300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+live.com.		26858	IN	NS	ns4.msft.net.
+live.com.		26858	IN	NS	ns3.msft.net.
+live.com.		26858	IN	NS	ns5.msft.net.
+live.com.		26858	IN	NS	ns1.msft.net.
+live.com.		26858	IN	NS	ns2.msft.net.
+
+;; ADDITIONAL SECTION:
+ns1.msft.net.		3242	IN	A	65.55.37.62
+ns2.msft.net.		296	IN	A	208.84.2.53
+ns3.msft.net.		755	IN	A	213.199.180.53
+ns4.msft.net.		295	IN	A	208.76.45.53
+ns5.msft.net.		3242	IN	A	65.55.226.140
+
+;; Query time: 8 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 229
+
+---
+# dig dl-obs.official.line.naver.jp
+
+; <<>> DiG 9.8.1-P1 <<>> dl-obs.official.line.naver.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21752
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;dl-obs.official.line.naver.jp.	IN	A
+
+;; ANSWER SECTION:
+dl-obs.official.line.naver.jp. 300 IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+naver.jp.		71845	IN	NS	adns1.naver.com.
+naver.jp.		71845	IN	NS	ns1.naver.jp.
+naver.jp.		71845	IN	NS	ns2.naver.jp.
+
+;; ADDITIONAL SECTION:
+adns1.naver.com.	71845	IN	A	125.209.248.6
+
+;; Query time: 29 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 144
+
+---
+# dig dl.stickershop.line.naver.jp
+
+; <<>> DiG 9.8.1-P1 <<>> dl.stickershop.line.naver.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50795
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;dl.stickershop.line.naver.jp.	IN	A
+
+;; ANSWER SECTION:
+dl.stickershop.line.naver.jp. 300 IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+naver.jp.		71845	IN	NS	ns1.naver.jp.
+naver.jp.		71845	IN	NS	adns1.naver.com.
+naver.jp.		71845	IN	NS	ns2.naver.jp.
+
+;; ADDITIONAL SECTION:
+adns1.naver.com.	71845	IN	A	125.209.248.6
+
+;; Query time: 27 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 143
+
+---
+# dig gd2.line.naver.jp
+
+; <<>> DiG 9.8.1-P1 <<>> gd2.line.naver.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26855
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;gd2.line.naver.jp.		IN	A
+
+;; ANSWER SECTION:
+gd2.line.naver.jp.	219	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+naver.jp.		82704	IN	NS	ns1.naver.jp.
+naver.jp.		82704	IN	NS	adns1.naver.com.
+naver.jp.		82704	IN	NS	ns2.naver.jp.
+
+;; ADDITIONAL SECTION:
+adns1.naver.com.	82704	IN	A	125.209.248.6
+
+;; Query time: 0 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 132
+
+---
+# dig totallymadeup.domain.gojays.line.naver.jp
+
+; <<>> DiG 9.8.1-P1 <<>> totallymadeup.domain.gojays.line.naver.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54285
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;totallymadeup.domain.gojays.line.naver.jp. IN A
+
+;; ANSWER SECTION:
+totallymadeup.domain.gojays.line.naver.jp. 300 IN A 37.61.54.158
+
+;; AUTHORITY SECTION:
+naver.jp.		71867	IN	NS	ns2.naver.jp.
+naver.jp.		71867	IN	NS	adns1.naver.com.
+naver.jp.		71867	IN	NS	ns1.naver.jp.
+
+;; ADDITIONAL SECTION:
+adns1.naver.com.	71867	IN	A	125.209.248.6
+
+;; Query time: 26 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Thu Jul 10 02:28:32 2014
+;; MSG SIZE  rcvd: 156
+
+---
+# curl http://dl-obs.official.line.naver.jp/r/talk/o/u3ae3691f73c7a396fb6e5243a8718915-1379585871
+curl: (7) couldn't connect to host
+---
+# curl http://dl.stickershop.line.naver.jp/products/0/0/1/1109/android/preview.png
+curl: (7) couldn't connect to host
+---
+# curl -I 'https://gd2.line.naver.jp'
+curl: (28) SSL connection timeout
+---
+# curl -A 'Android Mobile LA/CN' http://line.naver.jp/app/resources/bwi
+curl: (7) couldn't connect to host
+---
