@@ -1,0 +1,32 @@
+
+; <<>> DiG 9.8.1-P1 <<>> flickr.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30466
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 5, ADDITIONAL: 5
+
+;; QUESTION SECTION:
+;flickr.com.			IN	A
+
+;; ANSWER SECTION:
+flickr.com.		300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+flickr.com.		156309	IN	NS	ns4.yahoo.com.
+flickr.com.		156309	IN	NS	ns1.yahoo.com.
+flickr.com.		156309	IN	NS	ns5.yahoo.com.
+flickr.com.		156309	IN	NS	ns2.yahoo.com.
+flickr.com.		156309	IN	NS	ns3.yahoo.com.
+
+;; ADDITIONAL SECTION:
+ns1.yahoo.com.		149165	IN	A	68.180.131.16
+ns2.yahoo.com.		149166	IN	A	68.142.255.16
+ns3.yahoo.com.		149165	IN	A	203.84.221.53
+ns4.yahoo.com.		149165	IN	A	98.138.11.157
+ns5.yahoo.com.		149165	IN	A	119.160.247.124
+
+;; Query time: 85 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Tue Jul 15 22:30:15 2014
+;; MSG SIZE  rcvd: 220
+

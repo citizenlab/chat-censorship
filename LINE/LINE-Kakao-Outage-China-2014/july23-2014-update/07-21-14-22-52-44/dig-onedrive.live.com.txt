@@ -1,0 +1,29 @@
+
+; <<>> DiG 9.8.1-P1 <<>> onedrive.live.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 65505
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 5, ADDITIONAL: 2
+
+;; QUESTION SECTION:
+;onedrive.live.com.		IN	A
+
+;; ANSWER SECTION:
+onedrive.live.com.	300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+live.com.		118603	IN	NS	ns3.msft.net.
+live.com.		118603	IN	NS	ns4.msft.net.
+live.com.		118603	IN	NS	ns2.msft.net.
+live.com.		118603	IN	NS	ns5.msft.net.
+live.com.		118603	IN	NS	ns1.msft.net.
+
+;; ADDITIONAL SECTION:
+ns3.msft.net.		621	IN	A	213.199.180.53
+ns4.msft.net.		203	IN	A	208.76.45.53
+
+;; Query time: 7 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Mon Jul 21 22:53:19 2014
+;; MSG SIZE  rcvd: 181
+

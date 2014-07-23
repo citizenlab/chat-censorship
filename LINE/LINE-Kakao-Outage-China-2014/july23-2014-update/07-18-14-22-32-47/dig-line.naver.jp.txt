@@ -1,0 +1,34 @@
+
+; <<>> DiG 9.8.1-P1 <<>> line.naver.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24616
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 7, ADDITIONAL: 5
+
+;; QUESTION SECTION:
+;line.naver.jp.			IN	A
+
+;; ANSWER SECTION:
+line.naver.jp.		300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+jp.			98289	IN	NS	a.dns.jp.
+jp.			98289	IN	NS	f.dns.jp.
+jp.			98289	IN	NS	c.dns.jp.
+jp.			98289	IN	NS	e.dns.jp.
+jp.			98289	IN	NS	b.dns.jp.
+jp.			98289	IN	NS	g.dns.jp.
+jp.			98289	IN	NS	d.dns.jp.
+
+;; ADDITIONAL SECTION:
+a.dns.jp.		24090	IN	A	203.119.1.1
+c.dns.jp.		86374	IN	A	156.154.100.5
+d.dns.jp.		35176	IN	A	210.138.175.244
+e.dns.jp.		77507	IN	A	192.50.43.53
+g.dns.jp.		83475	IN	A	203.119.40.1
+
+;; Query time: 7 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Fri Jul 18 22:33:57 2014
+;; MSG SIZE  rcvd: 243
+

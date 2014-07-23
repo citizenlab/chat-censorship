@@ -1,0 +1,46 @@
+
+; <<>> DiG 9.8.1-P1 <<>> kakao.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39441
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 13, ADDITIONAL: 11
+
+;; QUESTION SECTION:
+;kakao.com.			IN	A
+
+;; ANSWER SECTION:
+kakao.com.		300	IN	A	37.61.54.158
+
+;; AUTHORITY SECTION:
+com.			170361	IN	NS	g.gtld-servers.net.
+com.			170361	IN	NS	h.gtld-servers.net.
+com.			170361	IN	NS	a.gtld-servers.net.
+com.			170361	IN	NS	l.gtld-servers.net.
+com.			170361	IN	NS	b.gtld-servers.net.
+com.			170361	IN	NS	c.gtld-servers.net.
+com.			170361	IN	NS	m.gtld-servers.net.
+com.			170361	IN	NS	i.gtld-servers.net.
+com.			170361	IN	NS	j.gtld-servers.net.
+com.			170361	IN	NS	f.gtld-servers.net.
+com.			170361	IN	NS	k.gtld-servers.net.
+com.			170361	IN	NS	e.gtld-servers.net.
+com.			170361	IN	NS	d.gtld-servers.net.
+
+;; ADDITIONAL SECTION:
+a.gtld-servers.net.	123340	IN	A	192.5.6.30
+b.gtld-servers.net.	78889	IN	A	192.33.14.30
+c.gtld-servers.net.	163798	IN	A	192.26.92.30
+d.gtld-servers.net.	12662	IN	A	192.31.80.30
+e.gtld-servers.net.	90551	IN	A	192.12.94.30
+f.gtld-servers.net.	31151	IN	A	192.35.51.30
+h.gtld-servers.net.	7478	IN	A	192.54.112.30
+j.gtld-servers.net.	91086	IN	A	192.48.79.30
+k.gtld-servers.net.	104015	IN	A	192.52.178.30
+l.gtld-servers.net.	27712	IN	A	192.41.162.30
+m.gtld-servers.net.	24812	IN	A	192.55.83.30
+
+;; Query time: 31 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Sat Jul 19 10:38:30 2014
+;; MSG SIZE  rcvd: 443
+

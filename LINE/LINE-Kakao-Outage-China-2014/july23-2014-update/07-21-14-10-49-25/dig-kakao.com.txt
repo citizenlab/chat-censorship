@@ -1,0 +1,22 @@
+
+; <<>> DiG 9.8.1-P1 <<>> kakao.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8384
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;kakao.com.			IN	A
+
+;; ANSWER SECTION:
+kakao.com.		3600	IN	A	110.76.141.122
+
+;; AUTHORITY SECTION:
+kakao.com.		3600	IN	NS	ns.iwilab.com.
+kakao.com.		3600	IN	NS	ns2.iwilab.com.
+
+;; Query time: 53 msec
+;; SERVER: 10.202.72.118#53(10.202.72.118)
+;; WHEN: Mon Jul 21 10:51:18 2014
+;; MSG SIZE  rcvd: 85
+

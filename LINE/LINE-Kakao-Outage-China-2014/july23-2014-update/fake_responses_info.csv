@@ -1,0 +1,12 @@
+target_given,domain,asn_number,asn_name,registrar,asn_established_date,in_prefix,asn_country_code,maxmind_country_code
+8.7.198.45,Cant resolve,3356,"LEVEL3 - Level 3 Communications, Inc.,US",arin,,8.0.0.0/9,US,US
+78.16.49.15,Cant resolve,2110,"AS-BTIRE BT Communications Ireland Limited,IE",ripencc,2007-04-04,78.16.0.0/14,IE,IE
+37.61.54.158,Cant resolve,28787,"BAKINTER-AS Baktelekom,AZ",ripencc,2012-01-18,37.61.0.0/17,AZ,AZ
+93.46.8.89,93-46-8-89.ip105.fastwebnet.it.,12874,"FASTWEB Fastweb SpA,IT",ripencc,2008-02-25,93.44.0.0/14,IT,IT
+46.82.174.68,Cant resolve,3320,"DTAG Deutsche Telekom AG,DE",ripencc,2010-06-07,46.80.0.0/12,DE,DE
+159.106.121.75,Cant resolve,,Can't find!,,,,,US
+59.24.3.173,Cant resolve,4766,"KIXS-AS-KR Korea Telecom,KR",apnic,2004-08-02,59.24.0.0/13,KR,KR
+203.98.7.65,Cant resolve,4768,"CLIX-NZ TelstraClear Ltd,NZ",apnic,,203.98.0.0/18,NZ,NZ
+243.185.187.39,Cant resolve,,Can't find!,,,,,
+127.0.0.1,localhost.,,Can't find!,,,,,
+
