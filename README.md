@@ -1,6 +1,6 @@
-Data related to Citizen Lab investigations of chat client censorship.  Organized by the clients investigated
+Data related to Citizen Lab investigations of keyword censorship in chat client and social media.  Organized by the programs  investigated
 
-Currently the two chat clients where blocking was observed:
+Currently the dataset includes three clients
 
 [Tom-Skype and Sina UC](http://china-chats.net)
 
