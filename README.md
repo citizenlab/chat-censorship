@@ -10,13 +10,13 @@ The chat app dataset includes three clients
 
 The social video platform (SVP) dataset includes four platforms:
 
-YY
+[YY] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
 
-Sina Show
+[Sina Show] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
 
-9158
+[9158] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
 
-GuaGua 
+[GuaGua] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel) 
 
 License
 ========
