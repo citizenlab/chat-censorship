@@ -1,22 +1,23 @@
-Data related to Citizen Lab investigations of keyword censorship in chat apps and social video platforms.  Organized by the programs  investigated
+Overview
+========
 
-The chat app dataset includes three clients
+Collection of keyword lists used to censor chat messages on chat apps and live streaming apps used in China. Each of these apps implements censorship on the client-side, which allows us to reverse engineer them and extract the keyword lists used to block content in chat messages. Our analysis shows how keyword lists are downloaded to the applications and how encryption and decryption of lists is implemented (when it is present). Changes to keyword lists are tracked over the data collection period for each application. 
 
-[Tom-Skype](http://china-chats.net)
+Full details on reverse engineering method and results are avalible in reports below:
 
-[Sina UC] (http://china-chats.net)
+Report: [Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC] (http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
+Apps analyzed: TOM-Skype, Sina UC
 
-[LINE](https://citizenlab.org/2013/11/asia-chats-investigating-regionally-based-keyword-censorship-line/) 
+Report: [Asia Chats: Investigating Regionally-based Keyword Censorship in LINE] (https://citizenlab.org/2013/11/asia-chats-investigatingregionally-based-keyword-censorship-line/)
+Apps analyzed: LINE 
 
-The social video platform (SVP) dataset includes four platforms:
+Report: [Every Rose Has Its Thorn: Censorship and Surveillance on Social Video Platforms in China] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
+Apps Analyzed: YY, Sina Show, 9158, GuaGua
 
-[YY] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
-
-[Sina Show] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
-
-[9158] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
-
-[GuaGua] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel) 
+Keyword Content Analysis 
+========
+Datasets include raw keyword lists collected from the applications and processed datasets that include translations of keywords. 
+Keywords were translated to English using combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general themes according to a code book
 
 License
 ========
