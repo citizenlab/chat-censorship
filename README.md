@@ -5,14 +5,12 @@ Collection of keyword lists used to censor chat messages on chat apps and live s
 
 Full details on reverse engineering method and results are avalible in reports below:
 
-Report: [Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC] (http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
-Apps analyzed: TOM-Skype, Sina UC
+[Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC] (http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
 
-Report: [Asia Chats: Investigating Regionally-based Keyword Censorship in LINE] (https://citizenlab.org/2013/11/asia-chats-investigatingregionally-based-keyword-censorship-line/)
-Apps analyzed: LINE 
+[Asia Chats: Investigating Regionally-based Keyword Censorship in LINE] (https://citizenlab.org/2013/11/asia-chats-investigatingregionally-based-keyword-censorship-line/)
 
-Report: [Every Rose Has Its Thorn: Censorship and Surveillance on Social Video Platforms in China] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
-Apps Analyzed: YY, Sina Show, 9158, GuaGua
+[Every Rose Has Its Thorn: Censorship and Surveillance on Social Video Platforms in China] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
+
 
 Keyword Content Analysis 
 ========
