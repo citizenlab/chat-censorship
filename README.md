@@ -15,7 +15,7 @@ Full details on reverse engineering method and results are avalible in reports b
 Keyword Content Analysis 
 ========
 Datasets include raw keyword lists collected from the applications and processed datasets that include translations of keywords. 
-Keywords were translated to English using combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes] (https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book] (https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv)
+Keywords were translated to English using combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes] (https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book] (https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv)
 
 License
 ========
