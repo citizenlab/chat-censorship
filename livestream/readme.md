@@ -15,6 +15,9 @@ Data collected between February 2015 to March 2015 described [here] (https://www
 
 Data collected between March 2015 to September 2016 described [here] (https://netalert.me/harmonized-histories.html)
 
+Keywords were translated to English using combination of machine and human translation.
+Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes] (https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book] (https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv)
+
 Data Fields
 ========
 
@@ -42,12 +45,6 @@ earliest event date: date of the earliest event
 last event type: add (keyword added), del (keyword deleted), last_seen (last instance of keyword being present on list)
 
 latest event date: date of the latest event
-
-Keyword Content Analysis 
-========
-Datasets include raw keyword lists collected from the applications and processed datasets that include translations of keywords. 
-Keywords were translated to English using combination of machine and human translation.
-Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes] (https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book] (https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv)
 
 Resources 
 ========
