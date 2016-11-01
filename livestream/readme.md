@@ -32,6 +32,8 @@ theme: categories mapped to six [themes] (https://github.com/citizenlab/chat-cen
 
 categories: keywords mapped to [categories] (https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv)
 
+description: contextual background behind the keyword
+
 earliest event type: add (keyword added), del (keyword deleted), first_seen
 (first instance keyword seen on list. Used when specific add date is not available),
 
