@@ -11,6 +11,10 @@ Data Analysis
 
 For details on reverse engineering methods and results see: [Every Rose Has Its Thorn: Censorship and Surveillance on Social Video Platforms in China] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
 
+To explore the data collected between March 2015 to September 2016 see 
+[Harmonized Histories?
+A year of fragmented censorship across Chinese live streaming applications] (https://netalert.me/harmonized-histories.html)
+
 Data collected between [February 2015 to March 2015] (https://github.com/citizenlab/chat-censorship/blob/master/livestream/livestream_keywords_02_15_05_15.csv) described [here] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel) 
 
 Data collected between [March 2015 to September 2016] (https://github.com/citizenlab/chat-censorship/blob/master/livestream/livestream_keywords_05_15_09_16.csv) described [here] (https://netalert.me/harmonized-histories.html)
