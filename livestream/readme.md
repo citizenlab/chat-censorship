@@ -11,9 +11,9 @@ Data Analysis
 
 For details on reverse engineering methods and results see: [Every Rose Has Its Thorn: Censorship and Surveillance on Social Video Platforms in China] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
 
-Data collected between February 2015 to March 2015 described [here] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel) 
+Data collected between [February 2015 to March 2015] (https://github.com/citizenlab/chat-censorship/blob/master/livestream/livestream_keywords_02_15_05_15.csv) described [here] (https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel) 
 
-Data collected between March 2015 to September 2016 described [here] (https://netalert.me/harmonized-histories.html)
+Data collected between [March 2015 to September 2016] (https://github.com/citizenlab/chat-censorship/blob/master/livestream/livestream_keywords_05_15_09_16.csv) described [here] (https://netalert.me/harmonized-histories.html)
 
 Keywords were translated to English using combination of machine and human translation.
 Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes] (https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book] (https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv)
