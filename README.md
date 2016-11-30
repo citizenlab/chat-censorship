@@ -1,9 +1,9 @@
 Overview
 ========
 
-Collection of keyword lists used to censor chat messages on chat apps and live streaming apps used in China. Each of these apps implements censorship on the client-side, which allows us to reverse engineer them and extract the keyword lists used to block content in chat messages. Our analysis shows how keyword lists are downloaded to the applications and how encryption and decryption of lists is implemented (when it is present). Changes to keyword lists are tracked over the data collection period for each application. 
+Collection of keyword lists used to censor content on chat apps and live streaming apps used in China.
 
-Full details on reverse engineering method and results are avalible in reports below:
+Full details on data collection and analysis methods and results are avalible in reports below:
 
 [Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC] (http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
 
