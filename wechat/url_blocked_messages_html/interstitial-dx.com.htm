@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/zh_CN/htmledition/style/url_notice184f03.css" />
+    <title>安全提示</title>
+</head>
+<body>
+<div class="notice_page">
+    <h1 class="logo">
+        <img src="https://res.wx.qq.com/zh_CN/htmledition/images/logo17ced3.png" class="logo_pic" />
+    </h1>
+    <div class="notice_wrapper light_box">
+        <div class="notice">
+            <p class="default_text">你将要访问</p>
+            <p id="text" class="default_text url_text"></p>
+            <p class="default_text">
+                <a href="javascript:" id="link" class="default_btn">继续访问</a>
+            </p>
+            <p class="default_text">
+                <strong class="em_text">请不要在该网页上填写QQ账号及密码</strong>
+            </p>
+        </div>
+    </div>
+    <div class="tip_area">
+        <div class="tip_switch_wrapper">
+            <a href="javascript:;" class="tip_switch" id="showTip">详情</a>
+        </div>
+        <div class="tip_wrapper dark_box dn" id="tip">
+            <div class="tip">
+                <div class="tip_hd">
+                    <h3 class="primary_text tip_title">谨慎输入QQ账号和密码的说明:</h3>
+                </div>
+                <div class="tip_bd">
+                    <p class="primary_text">
+                        你将要访问的网站，不是完全可信的，为了保证你的账号安全，请不要在该网页输入QQ账号和密码。如果你是该网站的所有者，可以登录微信公众平台查看微信公众账号“可信网址”申请指引。
+                    </p>
+                </div>
+            </div>
+            <span class="dark_arrow"></span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function(){
+        var url = "http://dx.com";
+        while(/&amp;/.test(url)){url=url.replace(/&amp;/g, '&')}
+        document.getElementById("link").setAttribute("href", url);
+        document.getElementById("text").innerHTML = url;
+    })();
+</script>
+<script src="https://res.wx.qq.com/zh_CN/htmledition/js/lib/jquery.min17ced3.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    jQuery("#showTip").click(function(){
+        jQuery("#tip").slideToggle();
+    });
+</script>
+</body>
+</html>

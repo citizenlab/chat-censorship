@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Language" content="zh-CN">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta content="telephone=no" name="format-detection" />
+        <title>提示</title>
+        <style>
+            html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{line-height:1.6;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}body,h1,h2,h3,h4,p,ul,ol,dl,dd,fieldset,textarea{margin:0}fieldset,legend,textarea,input,button{padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;*font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}ul,ol{padding-left:0;list-style-type:none}a img,fieldset{border:0}a{text-decoration:none}
+
+            h1{font-size: 20px;}
+            a,a:visited {color: #576b95;}
+            .text_color{color:#888888}
+            .title_color{color:#000000}
+            .desc{color:#b2b2b2;margin-top:5px}
+            .warn{color:#b71414}
+            .tips{font-size:13px;color:#b2b2b2}
+            html{height:100%;}
+            body{background-color:#ffffff;font-size:14px;}
+            .page_msg{padding:38% 12px 0;text-align:center}
+            .icon_area{margin-bottom:19px}
+            .text_area{margin-bottom:40px}
+            .text_area.title{margin-bottom:12px}
+            .opr_area{margin-bottom:25px}
+            .extra_area{margin-bottom:20px}
+            .extra_area li{display: inline-block;border-left: 1px solid #576b95;line-height: 12px;font-size: 12px;padding: 0 10px;}
+            .extra_area li:first-child{border:none;}
+            .icon_msg{width:100px;height:100px;vertical-align:middle;display:inline-block}
+
+            .btn {
+              display: inline-block;
+              margin-left: auto;
+              margin-right: auto;
+              padding-left: 60px;
+              padding-right: 60px;
+              font-size: 18px;
+              text-align: center;
+              text-decoration: none;
+              overflow: visible;
+              border-radius: 5px;
+              -moz-border-radius: 5px;
+              -webkit-border-radius: 5px;
+              box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              -webkit-box-sizing: border-box;
+              color: #09bb07;
+              line-height: 2.3em;
+              -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            }
+            .btn_primary {
+              border:1px solid #09bb07;
+            }
+
+            @media screen and (min-height:416px){
+                .extra_area{position:fixed;left:0;bottom:0;width:100%}
+            }
+
+            @media screen and (max-height:480px){
+                .page_msg{padding-top:75px;}
+            }
+
+            @media screen and (min-width:340px){
+                .page_msg{padding-left:15px;padding-right:15px;}
+            }
+
+            @media screen and (min-width:375px){
+
+            }
+
+            @media screen and (orientation : landscape){ 
+                .page_msg{padding-top:100px;}
+            }
+
+            .link{color:#000;font-size:18px;padding:7px 10px;margin:12px 0;border:1px solid #ccc;word-wrap: break-word;word-break: break-all;}
+            .minorLink{text-align: center;margin-top:40px;}
+
+        </style>
+    </head>
+
+                                <body>
+                <div class="page_msg">
+            <div class="text_area">
+                <p class="title">将要访问</p>
+                <div id="url" class="link"></div>
+                <p class="desc">非微信官方网页，将由微信转换为手机预览模式</p>
+            </div>
+            <div class="opr_area">
+                <p class="btn_area">
+                    <a href="javascript:gotoURL();" class="btn btn_primary" >继续访问</a>
+                </p>
+            </div>
+            <div class="extra_area">
+                <ul>
+                    <li><a href="" id="originalUrl">访问原网页</a></li><li><a href="javascript:reportURL();">投诉</a></li><li><a href="javascript:gotoMoreLink();">了解更多</a></li>
+                </ul>
+            </div>
+        </div>
+                        <script src="http://res.wx.qq.com/open/htmledition/openwap/js/common/lib/zepto1f8935.js"></script>
+        <script>
+            var url = "http://tumblr.com";
+            if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0){
+                Zepto("#originalUrl").attr("href",url.replace(/javascript/i,""));
+            }else{
+                Zepto("#originalUrl").attr("href","javascript:alert('原链接不合法！')");
+            }
+            var htmlDecode = function(str){               
+                return str                              
+                .replace(/&lt;/g, '<')        
+                .replace(/&rt;/g, '>')        
+                .replace(/&quot;/g, '"')      
+                .replace(/&amp;/g, '&');      
+            };
+            var reg = /&amp;nsukey.*/;
+            Zepto("#url").text(htmlDecode(url).replace("?", "%3F").replace(new RegExp("(&|%3F)?sukey.*"), "").replace("%3F", "?"));
+            function reportURL(){
+                window.location = "http://jubao.qq.com/cn/jubao?appname=wireless&subapp=weixin&jubaotype=url&uin=0&originuin=&url=" + encodeURIComponent(encodeURIComponent(url));
+            }
+            function gotoMoreLink() {
+                var gotoUrl = "/redirect/help?lang=zh_CN&url=";
+                window.location = gotoUrl + encodeURIComponent(htmlDecode(url).replace(/(&)?nsukey=.*?(&|$)/, "")) + "&scene=" + 
+                encodeURIComponent(getUrlParam("scene")||"") + "&block_type=1";
+            }
+            function gotoURL(){
+                try{
+                    window.location = "http://support.weixin.qq.com/cgi-bin/mmsupport-bin/getpagedata?requrl=" + encodeURIComponent(encodeURIComponent(htmlDecode(url))) + "&t=favorites&ticket="+encodeURIComponent(getUrlParam('ticket'));
+                    report(1, 1);
+                    }catch(e){
+                    alert("访问的URL不合法！");
+                }
+            }
+            function report(op_type, block_type){
+                Zepto.ajax({
+                    type: 'GET',
+                    url: '/redirect/report?op_uin='+"0"+'&op_type='+op_type+'&url=' + encodeURIComponent(url) + '&block_type='+block_type,
+                    dataType: 'json',
+                    success: function(data){
+                    },
+                    error: function(){
+                    }
+                });
+            }
+            function getUrlParam(name){
+                var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r!=null) return unescape(r[2]); return null;
+            } 
+
+            Zepto("a#closeWindow").click(function(){
+                WeixinJSBridge.invoke("closeWindow");
+            })
+
+        </script>
+    </body>
+</html>

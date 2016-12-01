@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Language" content="en-US">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta content="telephone=no" name="format-detection" />
+        <title>Warning</title>
+        <style>
+            html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{line-height:1.6;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}body,h1,h2,h3,h4,p,ul,ol,dl,dd,fieldset,textarea{margin:0}fieldset,legend,textarea,input,button{padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;*font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}ul,ol{padding-left:0;list-style-type:none}a img,fieldset{border:0}a{text-decoration:none}
+
+            h1{font-size: 20px;}
+            a,a:visited {color: #576b95;}
+            .text_color{color:#888888}
+            .title_color{color:#000000}
+            .desc{color:#b2b2b2;margin-top:5px}
+            .warn{color:#b71414}
+            .tips{font-size:13px;color:#b2b2b2}
+            html{height:100%;}
+            body{background-color:#ffffff;font-size:14px;}
+            .page_msg{padding:38% 12px 0;text-align:center}
+            .icon_area{margin-bottom:19px}
+            .text_area{margin-bottom:40px}
+            .text_area.title{margin-bottom:12px}
+            .opr_area{margin-bottom:25px}
+            .extra_area{margin-bottom:20px}
+            .extra_area li{display: inline-block;border-left: 1px solid #576b95;line-height: 12px;font-size: 12px;padding: 0 10px;}
+            .extra_area li:first-child{border:none;}
+            .icon_msg{width:100px;height:100px;vertical-align:middle;display:inline-block}
+
+            .btn {
+              display: inline-block;
+              margin-left: auto;
+              margin-right: auto;
+              padding-left: 60px;
+              padding-right: 60px;
+              font-size: 18px;
+              text-align: center;
+              text-decoration: none;
+              overflow: visible;
+              border-radius: 5px;
+              -moz-border-radius: 5px;
+              -webkit-border-radius: 5px;
+              box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              -webkit-box-sizing: border-box;
+              color: #09bb07;
+              line-height: 2.3em;
+              -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+            }
+            .btn_primary {
+              border:1px solid #09bb07;
+            }
+
+            @media screen and (min-height:416px){
+                .extra_area{position:fixed;left:0;bottom:0;width:100%}
+            }
+
+            @media screen and (max-height:480px){
+                .page_msg{padding-top:75px;}
+            }
+
+            @media screen and (min-width:340px){
+                .page_msg{padding-left:15px;padding-right:15px;}
+            }
+
+            @media screen and (min-width:375px){
+
+            }
+
+            @media screen and (orientation : landscape){ 
+                .page_msg{padding-top:100px;}
+            }
+
+            .link{color:#000;font-size:18px;padding:7px 10px;margin:12px 0;border:1px solid #ccc;word-wrap: break-word;word-break: break-all;}
+            .minorLink{text-align: center;margin-top:40px;}
+
+        </style>
+    </head>
+
+                                        <body>
+                <div class="page_msg">
+            <div class="icon_area">
+                <img class="icon_msg" src="data:image/png;base64,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"/>
+            </div>
+            <div class="text_area">
+                <h1 class="title">Page could not be accessed</h1>
+                <p class="desc">
+                                        This page has been reported multiple times for containing copyright infringement contents. To keep WeChat safe for all members&#44; this page cannot be accessed now.                                    </p>
+            </div>
+                        <div class="extra_area">
+                <a href="/redirect/help?lang=en_US&block_type=32" class="normalLink" >Help</a>
+            </div>
+               
+        </div>
+                <script src="http://res.wx.qq.com/open/htmledition/openwap/js/common/lib/zepto1f8935.js"></script>
+        <script>
+            var url = "http://tumblr.com";
+            var htmlDecode = function(str){               
+                return str                              
+                .replace(/&lt;/g, '<')        
+                .replace(/&rt;/g, '>')        
+                .replace(/&quot;/g, '"')      
+                .replace(/&amp;/g, '&');      
+            };
+            function gotoURL(){
+                try{
+                    window.location = htmlDecode(url);
+                    report(1, 1);
+                    } catch(e){
+                    alert('Invalid URL!');
+                }
+            }
+            function report(op_type, block_type){
+                Zepto.ajax({
+                    type: 'GET',
+                    url: '/redirect/report?op_uin='+"0"+'&op_type='+op_type+'&url=' + encodeURIComponent(url) + '&block_type='+block_type,
+                    dataType: 'json',
+                    success: function(data){
+                    },
+                    error: function(){
+                    }
+                });
+            }
+            function closeWebview(){
+                if(WeixinJSBridge && typeof WeixinJSBridge.invoke == "function"){
+                    WeixinJSBridge.invoke("closeWindow");
+                }
+            }
+
+        </script>
+    </body>
+</html>
