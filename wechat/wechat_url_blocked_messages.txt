@@ -1,0 +1,46 @@
+WeChat URL blocked warning messages:
+
+This site you are trying to visit is suspected of phishing or hosting malware and has been blocked by WeChat.
+据用户投诉及腾讯手机管家云网址检测，该网页可能包含恶意欺诈内容。
+
+This page has been reported multiple times for containing reward-offer sharing contents. To keep WeChat safe for all members, this page cannot be accessed now.
+该网页包含诱导分享内容，被多人投诉。为维护绿色上网环境，已停止访问。
+
+This page has been reported multiple times for containing scam contents. To keep WeChat safe for all members, this page cannot be accessed now.
+该网页包含恶意欺诈内容，被多人投诉。为维护绿色上网环境，已停止访问。
+
+This page has been reported multiple times for containing copyright infringement contents. To keep WeChat safe for all members, this page cannot be accessed now.
+该网页包含侵权内容，被多人投诉。为维护绿色上网环境，已停止访问。
+
+This page has been reported multiple times for containing rumor or false information. To keep WeChat safe for all members, this page cannot be accessed now.
+该网页包含谣言或虚假信息，被多人投诉。为维护绿色上网环境，已停止访问。
+
+This page has been reported multiple times for containing illegal or non-compliance contents. To keep WeChat safe for all members, this page cannot be accessed now.
+该网页包含违法或违规内容，被多人投诉。为维护绿色上网环境，已停止访问。
+
+This page has been reported multiple times for containing porn or obscene contents. To keep WeChat safe for all members, this page cannot be accessed now.
+该网页包含色情低俗内容，被多人投诉。为维护绿色上网环境，已停止访问。
+
+This page has been reported multiple times for containing false Lucky Money contents. To keep WeChat safe for all members, this page cannot be accessed now.
+该网页包含虚假红包内容，被多人投诉。为维护绿色上网环境，已停止访问。
+
+No access to this page as it's reported of containing nonsecure contents.
+[No Chinese text for equivalent error page]
+
+This page has been reported multiple times for containing reward-offer sharing contents. To keep WeChat safe for all members, this page cannot be accessed now.
+据用户投诉及腾讯手机管家云网址检测，该网页包含诱导分享内容。
+
+This page has been reported multiple times for containing scam contents. To keep WeChat safe for all members, this page cannot be accessed now.
+据用户投诉及腾讯手机管家云网址检测，该网页包含恶意欺诈内容。
+
+This page has been reported multiple times for containing copyright infringement contents. To keep WeChat safe for all members, this page cannot be accessed now.
+据用户投诉及腾讯手机管家云网址检测，该网页包含侵权内容。
+
+This page has been reported multiple times for containing rumor or false information. To keep WeChat safe for all members, this page cannot be accessed now.
+据用户投诉及腾讯手机管家云网址检测，该网页包含谣言或虚假信息。
+
+This page has been reported multiple times for containing illegal or non-compliance contents. To keep WeChat safe for all members, this page cannot be accessed now.
+据用户投诉及腾讯手机管家云网址检测，该网页包含违法或违规内容。
+
+No access to this page as it's reported of containing malwares.
+[No Chinese text for equivalent error page]
