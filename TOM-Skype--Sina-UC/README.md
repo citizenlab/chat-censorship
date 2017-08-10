@@ -16,4 +16,4 @@ For raw data and decryption scripts see [Jeffrey Knockel's webpage](http://www.c
 For details on reverse engineering methods and results see: 
 [Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC](http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
 
-Explore visualizatons of the data [China Chats](https://china-chats.net).
+Explore visualizatons of the data [China Chats](https://china-chats.net)
