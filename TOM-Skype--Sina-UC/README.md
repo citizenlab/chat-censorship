@@ -11,9 +11,9 @@ Collection of the keyword lists began on 24 April 2011 (TOM–Skype)/8 August 20
 
 Resources 
 ========
-For raw data and decryption scripts see [Jeffrey Knockel's webpage] (http://www.cs.unm.edu/~jeffk/tom-skype/)
+For raw data and decryption scripts see [Jeffrey Knockel's webpage](http://www.cs.unm.edu/~jeffk/tom-skype/)
 
 For details on reverse engineering methods and results see: 
-[Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC] (http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
+[Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC](http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
 
-Explore visualizatons of the data [China Chats] (https://chinachats.net)
+Explore visualizatons of the data [China Chats](https://china-chats.net)
