@@ -11,6 +11,7 @@ Full details on data collection and analysis methods and results are avalible in
 
 [Every Rose Has Its Thorn: Censorship and Surveillance on Social Video Platforms in China](https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
 
+[Measuring Decentralization of Chinese Keyword Censorship via Mobile Games](https://www.usenix.org/conference/foci17/workshop-program/presentation/knockel)
 
 Keyword Content Analysis 
 ========
