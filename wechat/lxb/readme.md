@@ -1,4 +1,6 @@
 # Analyzing censorship of the death of Liu Xiaobo on WeChat and Weibo
+## Key Findings 
+
 On July 13, 2017, Liu Xiaobo, China’s only Nobel Peace Prize winner and its most famous political prisoner died from complications due to liver cancer.
 
 The scope of censorship of keywords and images on WeChat related to Liu Xiaobo expanded greatly after his death.
@@ -9,3 +11,6 @@ Sina Weibo maintains a ban on searches for Liu Xiaobo’s name in English and Ch
 
 For full details on our methodology and analysis of results see [Remebering Liu Xiaobo: Analyzing censorship of the death of Liu Xiaobo on WeChat and Weibo](https://citizenlab.ca/2017/07/analyzing-censorship-of-the-death-of-liu-xiaobo-on-wechat-and-weibo/) 
 
+## Data Overview 
+
+[List of blocked keywords](https://github.com/citizenlab/chat-censorship/blob/master/wechat/lxb/liu_xiaobo_keywords_wechat.csv)
