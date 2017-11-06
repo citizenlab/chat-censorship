@@ -9,8 +9,11 @@ His death is also the first time we see image filtering in one-to-one chat, in a
 
 Sina Weibo maintains a ban on searches for Liu Xiaobo’s name in English and Chinese (both simplified and traditional). However, since his passing, his given name (Xiaobo) alone is enough to trigger censorship, showing increased censorship on the platform and a recognition that his passing is a particularly sensitive event.
 
-For full details on our methodology and analysis of results see [Remebering Liu Xiaobo: Analyzing censorship of the death of Liu Xiaobo on WeChat and Weibo](https://citizenlab.ca/2017/07/analyzing-censorship-of-the-death-of-liu-xiaobo-on-wechat-and-weibo/) 
+## Report
+[Remebering Liu Xiaobo: Analyzing censorship of the death of Liu Xiaobo on WeChat and Weibo](https://citizenlab.ca/2017/07/analyzing-censorship-of-the-death-of-liu-xiaobo-on-wechat-and-weibo/) 
 
 ## Data Overview 
 
 [List of blocked keywords](https://github.com/citizenlab/chat-censorship/blob/master/wechat/lxb/liu_xiaobo_keywords_wechat.csv)
+
+[List of blocked images](https://github.com/citizenlab/chat-censorship/tree/master/wechat/liuxiaobo/images)
