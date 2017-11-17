@@ -9,6 +9,8 @@ Data
 ========
 Collection of the keyword lists began on 24 April 2011 (TOM–Skype)/8 August 2011 (Sina UC) and ended on 31 January 2013, with the latest changes occurring on 20 December 2012 (TOM–Skype)/11 October 2012 (Sina UC). In total, the dataset consists of 88 lists, which combined contain 4,256 unique keywords. Keywords were translated to English using combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general themes according to a code book
 
+Note that raw collection data is available in directories ending in \*-raw-data.
+
 Resources 
 ========
 For decryption scripts see [Jeffrey Knockel's webpage](http://www.cs.unm.edu/~jeffk/tom-skype/)

@@ -19,6 +19,8 @@ Data collected between [February 2015 to March 2015](https://github.com/citizenl
 
 Data collected between [March 2015 to September 2016](https://github.com/citizenlab/chat-censorship/blob/master/livestream/livestream_keywords_05_15_09_16.csv) described [here](https://netalert.me/harmonized-histories.html)
 
+Note that raw collection data is available in directories ending in \*-raw-data.
+
 Keywords were translated to English using combination of machine and human translation.
 Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes](https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book](https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv)
 
