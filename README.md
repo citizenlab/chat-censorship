@@ -7,6 +7,8 @@ The full details on data collection and analysis methods and results are availab
 
 ## Chat apps
 
+The research below tracks daily changes to censorship in three different chat apps used in China:  TOM-Skype, Sina UC, and Line.  Overall, our chat app data consists of over 4,000 blacklisted keywords.
+
 * [Three Researchers, Five Conjectures: An Empirical Analysis of TOM-Skype Censorship and Surveillance](https://www.usenix.org/legacy/event/foci11/tech/final_files/Knockel.pdf)
 
 * [Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC](http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
@@ -17,6 +19,8 @@ Data: [TOM-Skype and Sina UC](https://github.com/citizenlab/chat-censorship/tree
 
 ## Live-streaming apps
 
+The research below tracks hourly changes to censorship in three different live streaming apps in China:  YY, Sina Show, and 9158; and documents the keywords censored by GuaGua, which does not include a mechanism for downloading updates to its censorship blacklists.  Overall, our live-streaming data consists of over 20,000 blacklisted keywords.
+
 * [Every Rose Has Its Thorn: Censorship and Surveillance on Social Video Platforms in China](https://www.usenix.org/conference/foci15/workshop-program/presentation/knockel)
 
 * [Harmonized Histories? A year of fragmented censorship across Chinese live streaming applications](https://netalert.me/assets/harmonized-histories/harmonized-histories.pdf)
@@ -25,11 +29,15 @@ Data: [Original live-streaming data (2015)](https://github.com/citizenlab/chat-c
 
 ## Mobile games
 
+Our research on mobile games analyzes domestic Chinese games as well as international games that have been altered to comply with Chinese regulations.  Overall, we found hundreds of mobile games performing censorship, collectively censoring over 100,000 unique blacklist keywords.
+
 * [Measuring Decentralization of Chinese Keyword Censorship via Mobile Games](https://www.usenix.org/conference/foci17/workshop-program/presentation/knockel)
 
 Data: [Mobile games](https://github.com/citizenlab/chat-censorship/tree/master/chinese-games)
 
 ## WeChat
+
+Our research on WeChat censorship uses sample testing to determine what type of content, such as words, URLs, and images, can be communicated over the platform.  We have studied what categorical content WeChat generally filters in additional to what content WeChat filters in response to specific events.
 
 * [One App, Two Systems How WeChat uses one censorship policy in China and another internationally](https://citizenlab.ca/2016/11/wechat-china-censorship-one-app-two-systems/)
 * [We (can’t) Chat “709 Crackdown” Discussions Blocked on Weibo and WeChat](https://citizenlab.ca/2017/04/we-cant-chat-709-crackdown-discussions-blocked-on-weibo-and-wechat/)
@@ -50,5 +58,3 @@ All data is provided under Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 International and available in full
 [here](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) and summarized
 [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-
-
