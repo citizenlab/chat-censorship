@@ -1,5 +1,6 @@
 # Documenting Censorship on WeChat
-Datasets of keywords, URLs, and images found blocked on WeChat. 
+
+This directory contains datasets of keywords, URLs, and images found blocked on WeChat across a number of our reports.
 
 ## Reports 
 
