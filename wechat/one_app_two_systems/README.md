@@ -19,4 +19,4 @@ WeChat’s internal browser blocks China-based accounts from accessing a range o
 
 [List of URLs found blocked on China accounts](https://github.com/citizenlab/chat-censorship/blob/master/wechat/one_app_two_systems/wechat_blocked_urls.csv)
 
-[Blocked URL messages](https://github.com/citizenlab/chat-censorship/blob/master/wechat/one_app_two_systems/wechat_url_blocked_messages.txt)
+[Blocked URL messages](https://github.com/citizenlab/chat-censorship/blob/master/wechat/one_app_two_systems/wechat_url_blocked_messages.txt) ([original html](https://github.com/citizenlab/chat-censorship/tree/master/wechat/one_app_two_systems/url_blocked_messages_html))
