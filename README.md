@@ -37,7 +37,7 @@ Data: [Mobile games](https://github.com/citizenlab/chat-censorship/tree/master/c
 
 ## WeChat
 
-Our research on WeChat censorship uses sample testing to determine what type of content, such as words, URLs, and images, can be communicated over the platform.  We have studied what categorical content WeChat generally filters in additional to what content WeChat filters in response to specific events.
+Our research on WeChat censorship uses sample testing to determine what type of content, such as words, URLs, and images, can be communicated over the platform and which content is censored.  We have studied what categorical content WeChat generally filters in addition to what content WeChat filters in response to specific events.
 
 * [One App, Two Systems How WeChat uses one censorship policy in China and another internationally](https://citizenlab.ca/2016/11/wechat-china-censorship-one-app-two-systems/)
 * [We (can’t) Chat “709 Crackdown” Discussions Blocked on Weibo and WeChat](https://citizenlab.ca/2017/04/we-cant-chat-709-crackdown-discussions-blocked-on-weibo-and-wechat/)
