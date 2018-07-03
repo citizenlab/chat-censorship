@@ -13,10 +13,9 @@ Note that raw collection data is available in directories ending in \*-raw-data.
 
 Resources 
 ========
-For decryption scripts see [Jeffrey Knockel's webpage](http://www.cs.unm.edu/~jeffk/tom-skype/)
+For decryption scripts see [Jeffrey Knockel's webpage](https://www.cs.unm.edu/~jeffk/tom-skype/).
 
-For details on reverse engineering methods and results see:
-[Three Researchers, Five Conjectures: An Empirical Analysis of TOM-Skype Censorship and Surveillance](https://www.cs.unm.edu/~jeffk/publications/foci11tomskype.pdf)
-[Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC](http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727)
+For details on reverse engineering methods and results see
+[Three Researchers, Five Conjectures: An Empirical Analysis of TOM-Skype Censorship and Surveillance](https://www.cs.unm.edu/~jeffk/publications/foci11tomskype.pdf) and [Chat program censorship and surveillance in China: Tracking TOM-Skype and Sina UC](http://firstmonday.org/ojs/index.php/fm/article/view/4628/3727).
 
 [Explore visualizatons of the data](https://china-chats.net).
