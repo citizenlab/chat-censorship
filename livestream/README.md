@@ -4,7 +4,7 @@ Overview
 
 Keyword lists used to censor chat messages on four live streaming applications: YY, Sina Show, 9158, and GuaGua. 
 Each of these applications have client-side implementations of keyword censorship. 
-Through reverse engineering we extract the keyword lists and track updates to the lists over time.
+Through reverse engineering we extract the keyword lists and track updates to the lists over time.  Overall this dataset consists of over 20,000 unique blacklisted keywords.
 
 Data Analysis 
 ========
