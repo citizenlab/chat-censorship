@@ -36,7 +36,7 @@ Data: [Mobile games](https://github.com/citizenlab/chat-censorship/tree/master/c
 * [Remembering Liu Xiaobo Analyzing censorship of the death of Liu Xiaobo on WeChat and Weibo](https://citizenlab.ca/2017/07/analyzing-censorship-of-the-death-of-liu-xiaobo-on-wechat-and-weibo/)
 * [Managing the Message: What you can’t say about the 19th National Communist Party Congress on WeChat](https://citizenlab.ca/2017/11/managing-message-censorship-19th-national-communist-party-congress-wechat/)
 
-Data: [Keywords and URLS (November 2016)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/one_app_two_systems), [709 Crackdown keywords and images (April 2017)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/709crackdown), [Liu Xiaobo keywords and images (July 2017)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/lxb), [19th Party Congress keywords (November 2017)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/ncpc19)
+Data: [Keywords and URLs (November 2016)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/one_app_two_systems), [709 Crackdown keywords and images (April 2017)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/709crackdown), [Liu Xiaobo keywords and images (July 2017)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/lxb), [19th Party Congress keywords (November 2017)](https://github.com/citizenlab/chat-censorship/tree/master/wechat/ncpc19)
 
 Keyword Content Analysis 
 ========
