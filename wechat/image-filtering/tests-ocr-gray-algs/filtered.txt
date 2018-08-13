@@ -1,0 +1,2 @@
+lightness/{red,yellow,cyan,blue}
+average/{yellow,green,blue,magenta}

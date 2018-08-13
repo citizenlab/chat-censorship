@@ -1,0 +1,3 @@
+average: yellow, green, blue, magenta
+lightness: red, yellow, green, cyan, blue, magenta
+lum:

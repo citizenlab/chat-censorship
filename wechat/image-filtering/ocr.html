@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>OCR Evasion Research</title>
+<style>
+body {
+    font-family: sans-serif;
+}
+
+textarea {
+    font-family: sans-serif;
+    font-size: 12pt;
+    width: 100%;
+    border: solid 2px gray;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: solid 2px gray;
+    margin-left: 0px;
+    margin-right: 8px;
+}
+
+label {
+    white-space: nowrap;
+}
+
+#errors {
+    color: red;
+}
+</style>
+<script>
+'use strict';
+
+var RWT = 0.299; var GWT = 0.587; var BWT = 0.114;
+
+function loadPatternImage(name, base64, onload) {
+    var patternImage = new Image();
+    var blob = base64ToBlob(base64, 'image/png');
+    var url = URL.createObjectURL(blob);
+    patternImage.src = url;
+    patternImage.onload = function(e) {
+        URL.revokeObjectURL(patternImage.src);
+        window[name + 'PatternImage'] = patternImage;
+        onload();
+    };
+}
+
+function init() {
+    var squares = 'iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAAAAACoBHk5AAAAEUlEQVQIW2P8zwAEjP8ZsZIAVVcFBQfReXgAAAAASUVORK5CYII=';
+    loadPatternImage('squares', squares, init2);
+}
+
+function init2() {
+    var letters = 'iVBORw0KGgoAAAANSUhEUgAAAEwAAAAICAAAAAB2NUaNAAABgElEQVQoz63NvWtTARSG8efeJIamGpPSEuNtjCkurU6liODk2FF08AsnkyIu6tIiiJP+CdZFbAd1TKkWcaloJdoYBV0UEXJTEKRQuVvHx6HRobNnOHBeeH8H/+PgyihDC84P7F9yOWJ8XZg8dZaG0KDus1GqL4Tz3gmD60IM5seSWt5iNTmTjBWtRFtRRQAP8JZhC7w/Zpk1JoRW7g1ZoUPWiDYlIWWpQ9jHxgd/5sadSncr3T1TzvCaGXvkMeQraQPiEUNiskK30IV+L0VMIKybP/3NfjhNi2kbNPc1abjKNV75kuP4pT5IICQK7CCF+B/2d/92Hm73zzkeMOcis+dmWbTHAD1vcRMLPAJD4iFDEt2FhcSEO79+XdnbD59wlae2OfpwgrZN6ix5kmUM+QiOsHbEEp9J78KG6VAWEjN8iszwAWxR452bQfp7Ktj0IqtcssgPvMAJ8H4m+9jnh8jd24UtFCivCIk3Au56mUlwA9hwu1pLDle3PRhtRZHAH7ExGLySqAkvAAAAAElFTkSuQmCC';
+    loadPatternImage('letters', letters, init3);
+}
+
+function init3() {
+    var textarea = document.getElementById('textarea');
+    var eventTypes = ['change', 'keyup', 'paste'];
+    for (var i = 0; i < eventTypes.length; ++i) {
+        var eventType = eventTypes[i];
+        textarea.addEventListener(eventType, handleText, false);
+    }
+    var saver = document.getElementById('saver');
+    saver.originalColor = saver.style.color;
+    saver.originalTextDecoration = saver.style.textDecoration;
+    saver.originalCursor = saver.style.cursor;
+    var evasions = document.getElementsByName('evasion');
+    for (var i = 0; i < evasions.length; ++i) {
+        var evasion = evasions[i];
+        evasion.addEventListener('change', drawImage, false);
+    }
+    handleText();
+}
+
+function getText() {
+    var textarea = document.getElementById('textarea');
+    return textarea.value;
+}
+
+function getPattern() {
+    var pattern = document.querySelector('#pattern input[name="evasion"]:checked');
+    return pattern ? pattern.value : false;
+}
+
+function getColor() {
+    var color = document.querySelector('#color input[name="evasion"]:checked');
+    return color ? JSON.parse(color.value) : false;
+}
+
+function getColorName() {
+    var color = document.querySelector('#color input[name="evasion"]:checked');
+    if (color) {
+        var label = color.parentElement;
+        if (label.tagName.toLowerCase()  == 'label') {
+            return label.textContent.toLowerCase();
+        }
+    }
+    return false;
+}
+
+function getFont(fontSize) {
+    return pointsToPixels(fontSize) + 'px sans-serif';
+}
+
+function handleText() {
+    var text = getText();
+    var drawnText = window.drawnText;
+    if (typeof drawnText == 'undefined' || text != drawnText) {
+        var saver = document.getElementById('saver');
+        if (text) {
+            saver.style.color = 'blue';
+            saver.style.textDecoration = 'underline';
+            saver.style.cursor = 'pointer';
+            saver.addEventListener('click', saveImage, false);
+        } else {
+            var saver = document.getElementById('saver');
+            saver.style.color =  saver.originalColor;
+            saver.style.textDecoration =  saver.originalTextDecoration;
+            saver.style.cursor =  saver.originalCursor;
+            saver.removeEventListener('click', saveImage, false);
+        }
+        drawImage();
+    }
+}
+
+function pointsToPixels(points) {
+    return Math.ceil(4 * points / 3);
+}
+
+function getLineHeightPixels(points) {
+    return Math.ceil(pointsToPixels(points) * 1.2);
+}
+
+function createLineDescriptor(ctx, line) {
+    var metrics = ctx.measureText(line);
+    var width = Math.ceil(metrics.width);
+    return {line: line, width: width};
+}
+
+function splitLines(text) {
+    var text = text.replace(/\r\n/g, '\n');
+    var text = text.replace(/\r/g, '\n');
+    return text.split(/\n/g);
+}
+
+function getResizedHeight(fontSize, lineCount) {
+    var height = getLineHeightPixels(fontSize);
+    var resizedHeight = Math.floor(1000 / (lineCount + 20 / height));
+    return Math.min(resizedHeight, height);
+}
+
+function getLineDescriptorData(canvas, lines, fontSize, height) {
+    if (typeof height == 'undefined') {
+        height = getLineHeightPixels(fontSize);
+    }
+    var margin = Math.ceil(10 * fontSize / 100);
+    var totalHeight = 2 * margin + height * lines.length;
+    var ctx = canvas.getContext('2d');
+    ctx.textBaseline = 'middle';
+    ctx.font = getFont(fontSize);
+    var lds = [];
+    var maxWidth = 0;
+    for (var i = 0; i < lines.length; ++i) {
+        var line = lines[i];
+        var ld = createLineDescriptor(ctx, line);
+        maxWidth = Math.max(maxWidth, ld.width);
+        lds.push(ld);
+    }
+    maxWidth += 2 * margin;
+    return {fontSize: fontSize, height:height, margin:margin, lds:lds,
+            totalHeight:totalHeight, maxWidth:maxWidth};
+}
+
+function resizeCanvas(canvas, canvasLdd, cssLdd) {
+    canvas.width = canvasLdd.maxWidth;
+    canvas.height = canvasLdd.totalHeight;
+    canvas.style.width = cssLdd.maxWidth + 'px';
+    canvas.style.maxHeight = cssLdd.totalHeight + 'px';
+}
+
+function changeLuminance(data, newY) {
+    for (var i = 0; i < data.length; i += 4) {
+        var r = data[i];
+        var g = data[i + 1];
+        var b = data[i + 2];
+        var y = Math.round(RWT * r + GWT * g + BWT * b);
+        var delta = newY - y;
+        if (delta < 0) {
+            var scale = newY / y;
+            r *= scale;
+            g *= scale;
+            b *= scale;
+        } else if (delta > 0) {
+            r += delta;
+            g += delta;
+            b += delta;
+            if (r > 256) {
+                delta = (r - 256) * RWT / (1 - RWT);
+                g += delta;
+                b += delta;
+                if (g > 256) {
+                    b += (g - 256) * GWT / (1 - BWT);
+                } else if (b > 256) {
+                    g += (b - 256) * BWT / (1 - GWT);
+                }
+            } else if (g > 256) {
+                delta = (g - 256) * GWT / (1 - GWT);
+                r += delta;
+                b += delta;
+                if (r > 256) {
+                    b += (r - 256) * RWT / (1 - BWT);
+                } else if (b > 256) {
+                    r += (b - 256) * BWT / RWT;
+                }
+            } else if (b > 256) {
+                delta = (g - 256) * BWT / (1 - BWT);
+                r += delta;
+                g += delta;
+                if (r > 256) {
+                    g += (r - 256) * RWT / (1 - GWT);
+                } else if (g > 256) {
+                    r += (g - 256) * GWT / (1 - RWT);
+                }
+            }
+        }
+        data[i] = r;
+        data[i + 1] = g;
+        data[i + 2] = b;
+    }
+}
+
+function changeCanvasLuminance(ctx, y) {
+    var imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+    changeLuminance(imageData.data, y);
+    ctx.putImageData(imageData, 0, 0);
+}
+
+function drawImage() {
+    var pattern = getPattern();
+    if (pattern) {
+        var color = [0, 0, 0];
+        var bgColor = [255, 255, 255];
+    } else {
+        var color = getColor();
+        if (color) {
+            var r = color[0];
+            var g = color[1];
+            var b = color[2];
+            var luminance = Math.round(RWT * r + GWT * g + BWT * b);
+            var bgColor = [luminance, luminance, luminance];
+        } else {
+            var color = [0, 0, 0];
+            var bgColor = [255, 255, 255];
+        }
+    }
+    var canvas = document.getElementById('canvas');
+    var text = getText();
+    var lines = splitLines(text);
+    var textarea = document.getElementById('textarea');
+    textarea.style.borderColor = 'gray';
+    var errors = document.getElementById('errors');
+    while (errors.firstChild) {
+        errors.removeChild(errors.firstChild);
+    }
+    if (lines.length > 25) {
+        textarea.style.borderColor = 'red';
+        var item = document.createElement('li');
+        item.textContent = 'There are too many lines in this text.  Only the first 25 lines fit.';
+        errors.appendChild(item);
+        lines = lines.slice(0, 25);
+    }
+    var ldd = getLineDescriptorData(canvas, lines, 100);
+    var resizedHeight = getResizedHeight(100, lines.length);
+    var resizedFontSize = Math.floor(resizedHeight / ldd.height * ldd.fontSize);
+    var resizedLdd = getLineDescriptorData(canvas, lines, resizedFontSize, resizedHeight);
+    if (resizedLdd.maxWidth > 1000) {
+        var minHeight = getResizedHeight(100, 25);
+        var minFontSize = Math.floor(minHeight / ldd.height * ldd.fontSize);
+        var minLdd = getLineDescriptorData(canvas, lines, minFontSize, minHeight);
+        if (minLdd.maxWidth > 1000) {
+            textarea.style.borderColor = 'red';
+            var item = document.createElement('li');
+            item.textContent = 'This text is too wide to fit.  Consider splitting it into additional lines.';
+            errors.appendChild(item);
+            resizedLdd = minLdd;
+            resizedLdd.maxWidth = 1000;
+            ldd.maxWidth = Math.ceil(1000 * 100 / minLdd.fontSize);
+        } else {
+            do {
+                resizedLdd = getLineDescriptorData(canvas, lines, resizedLdd.fontSize - 1);
+            } while (resizedLdd.maxWidth > 1000);
+        }
+    }
+    resizeCanvas(canvas, pattern ? resizedLdd : ldd, resizedLdd);
+    var ctx = canvas.getContext('2d');
+    if (!text) {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    } else {
+        ctx.fillStyle = 'rgb(' + bgColor + ')';
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = 'rgb(' + color + ')';
+        if (pattern) {
+            var ctxPattern = ctx.createPattern(window[pattern + 'PatternImage'], 'repeat');
+            ctx.fillStyle = ctxPattern;
+            ldd = resizedLdd;
+        }
+        var lds = ldd.lds;
+        var height = ldd.height;
+        ctx.font = getFont(ldd.fontSize);
+        ctx.translate(ldd.margin, ldd.margin);
+        for (var i = 0, y = 0; i < lds.length; ++i, y += height) {
+            var ld = lds[i];
+            ctx.fillText(ld.line, 0, y + (height >> 1));
+        }
+        if (!pattern) {
+            changeCanvasLuminance(ctx, luminance);
+        }
+    }
+    window.drawnText = text;
+}
+
+function clickLink(link, href, download) {
+    link.href = href;
+    link.download = download;
+    link.removeEventListener('click', saveImage, false);
+    link.click();
+    link.removeAttribute('href');
+    link.removeAttribute('download');
+    link.addEventListener('click', saveImage, false);
+}
+
+function getFileName() {
+    var fileName = 'text';
+    var pattern = getPattern();
+    var colorName = getColorName();
+    fileName += '-' + (pattern ? pattern : (colorName ? colorName : 'black'));
+    return fileName;
+}
+
+function handleBlob(blob, link, fileName) {
+    var mime = blob.type;
+    var ext = mime.split('/');
+    ext = ext[ext.length - 1];
+    if (typeof navigator.msSaveOrOpenBlob == 'function') {
+        navigator.msSaveOrOpenBlob(blob, fileName + '.' + ext);
+    } else {
+        var url = URL.createObjectURL(blob);
+        clickLink(link, url, fileName + '.' + ext);
+        URL.revokeObjectURL(url);
+    }
+}
+
+function base64ToBlob(base64, mime) {
+    var byteString = atob(base64);
+    var ab = new ArrayBuffer(byteString.length);
+    var ia = new Uint8Array(ab);
+    for (var i = 0; i < byteString.length; ++i) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+    return new Blob([ab], {type: mime});
+}
+
+function saveImage(e) {
+    var link = e.target;
+    var canvas = document.getElementById('canvas');
+    var fileName = getFileName();
+    var type = getColor() ? ['image/jpeg', 1.0] : ['image/png'];
+    if (typeof canvas.toBlob == 'function') {
+        var wrapper = function(blob) { handleBlob(blob, link, fileName); };
+        canvas.toBlob.apply(canvas, [wrapper].concat(type));
+    } else {
+        var dataURL = canvas.toDataURL.apply(canvas, type);
+        var arr = dataURL.split(',');
+        var mime = arr[0].match(/:(.*?);/)[1];
+        var blob = base64ToBlob(arr[1], mime);
+        handleBlob(blob, link, fileName);
+    }
+    e.preventDefault();
+}
+
+document.addEventListener('DOMContentLoaded', function(e) {
+    init();
+});
+</script>
+</head>
+
+<body>
+
+<table id="disclaimer" style="font-size:10pt;position:absolute;background-color:#ccc;top:0px;left:0px;width:100%;height:100%">
+
+    <tr>
+    <th style="padding:10px 30px 10px 30px;box-sizing:border-box;width:100%">
+    <div style="background-color:white;padding:0.1px 10pt 0.1px 10pt;max-width:550px;margin-left:auto;margin-right:auto">
+    <p><a href="#english">English</a> &bull; <a href="#chinese-simplified">简体中文</a> &bull; <a href="#chinese-traditional">繁體中文</a></p>
+    </div>
+    </th>
+    </tr>
+
+    <tr>
+    <td style="padding:10px 30px 10px 30px;box-sizing:border-box;width:100%">
+    <div style="background-color:white;padding:0.1px 10pt 0.1px 10pt;max-width:550px;margin-left:auto;margin-right:auto">
+
+    <p style="text-align:center"><strong><a name="english">English</a></strong></p>
+
+    <p><strong>DISCLAIMER:</strong> The source code published herein (the “Code”) is made available solely for academic, informational purposes in furtherance of methodological transparency. <strong>The Code is not intended for public use.</strong> The Citizen Lab disclaims any warranties or guarantees, express or implied, with respect to the Code, including without limitation any warranties of fitness for a particular purpose, or that the Code is free from error or will function without issues. The Citizen Lab will not be liable for any damages arising out of or in any way related to the use or dissemination of the Code, whether in contract, warranty, tort (including negligence or other theory) or otherwise. Any risks associated with the use of the Code, including legal, technical, or other risks, are assumed by the user.</p>
+
+    <p>The Code includes no functionality to protect privacy and/or hide identity. Images generated using the Code may be detected by third parties.</p>
+
+    <p>The Code was developed to study the use of Optical Character Recognition (OCR) technology to filter and block specific words on social media sites. It generates images which contain letters and symbols that are possible for humans to read, but difficult for some OCR systems to recognize. The Code was tested in a controlled academic setting, and applied to images that were then uploaded to the International version of WeChat Moments (朋友圈) in May 2018. Our test results are available for review in the following research publication:</p>
+
+    <blockquote>Jeffrey Knockel, Lotus Ruan, and Masashi Crete-Nishihata (The Citizen Lab, Munk School of Global Affairs, University of Toronto), “An analysis of automatic image filtering on WeChat Moments,” 8th USENIX Workshop on Free and Open Communications on the Internet (Baltimore, MD), 14 August 2018.</blockquote>
+
+    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState(null, document.title, url + '#english'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state != 'tool') { location.hash = '#' + window.location.href.split('#')[1] }; }; return false">Click here to continue.</span></p>
+
+    </div>
+    </td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px 30px 10px 30px;box-sizing:border-box;width:100%">
+    <div style="background-color:white;padding:0.1px 10pt 0.1px 10pt;max-width:550px;margin-left:auto;margin-right:auto">
+
+    <p style="text-align:center"><strong><a name="chinese-simplified">简体中文</a></strong></p>
+
+    <p><strong>免责声明：</strong>在此发布的源代码（以下简称“本代码”）仅供学术使用与参考，以进一步促进方法透明度。<strong>本代码无意供公众使用。</strong>加拿大多伦多大学蒙克全球事务学院公民实验室（Citizen Lab）不对本代码做任何明示或暗示的保证或担保，包括但不仅限于本代码的准确性或性能健全性以及其为某一特殊目的的适用性的保证或担保 。在任何情况下，公民实验室对于因使用或传播本代码而引起的或与之相关的直接或间接损失均不承担任何法律责任，无论是根据合同、保证、侵权（包括但不仅限于过失 ）等诉讼、仲裁 或任何其他形式的理论。任何与本代码的使用或传播相关的风险，包括法律、技术和其他风险，均由用户自行承担。</p>
+
+    <p>本代码并无保护隐私和/或匿名功能。由本代码生成的图像有可能被第三方检测。</p>
+
+    <p>本代码是为了研究将光学字符识别（OCR）应用于过滤和屏蔽社交媒体网站上的特定词汇而编写的。其生成的图像包含人类可辨识但某些OCR系统难以识别的字母与符号。本代码已在人为设置的学术环境下进行了测试，并且，其生成的图像已于2018年五月上传到国际版的微信朋友圈（WeChat Moments）。我们的测试成果可在以下研究刊物中查看：</p>
+
+    <blockquote>Jeffrey Knockel, Lotus Ruan, and Masashi Crete-Nishihata（多伦多大学蒙克全球事务学院公民实验室）, “微信朋友圈的图像自动过滤功能之分析，” 第八届USENIX有关互联网上自由与开放交流的研习会（马里兰州巴尔的摩市），2018年8月14日。</blockquote>
+
+    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState(null, document.title, url + '#chinese-simplified'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state != 'tool') { location.hash = '#' + window.location.href.split('#')[1] }; }; return false">点击这里继续。</span></p>
+
+    </div>
+    </td>
+    </tr>
+
+    <tr>
+    <td style="padding:10px 30px 10px 30px;box-sizing:border-box;width:100%">
+    <div style="background-color:white;padding:0.1px 10pt 0.1px 10pt;max-width:550px;margin-left:auto;margin-right:auto">
+
+    <p style="text-align:center"><strong><a name="chinese-traditional">繁體中文</a></strong></p>
+
+    <p><strong>免責聲明：</strong>在此發布的源代碼（以下簡稱“本代碼”）僅供學術使用與參考，以進一步促進方法透明度。<strong>本代碼無意供公眾使用。</strong>加拿大多倫多大學蒙克全球事務學院公民實驗室（Citizen Lab）不對本代碼做任何明示或暗示的保證或擔保，包括但不僅限於本代碼的準確性或性能健全性以及其為某一特殊目的的適用性的保證或擔保。在任何情況下，公民實驗室對於因使用或傳播本代碼而引起的或與之相關的直接或間接損失均不承擔任何法律責任，無論是根據合同、保證、侵權（包括但不僅限於過失）等訴訟、仲裁或任何其他形式的理論。任何與本代碼的使用或傳播相關的風險，包括法律、技術和其他風險，均由用戶自行承擔。</p>
+
+    <p>本代碼並無保護隱私和/或匿名功能。由本代碼生成的圖像有可能被第三方檢測。</p>
+
+    <p>本代碼是為了研究將光學字符識別（OCR）應用於過濾和屏蔽社交媒體網站上的特定詞彙而編寫的。其生成的圖像包含人類可辨識但某些OCR系統難以識別的字母與符號。本代碼已在人為設置的學術環境下進行了測試，並且，其生成的圖像已於2018年五月上傳到國際版的微信朋友圈（WeChat Moments）。我們的測試成果可在以下研究刊物中查看：</p>
+
+    <blockquote>Jeffrey Knockel, Lotus Ruan, and Masashi Crete-Nishihata（多倫多大學蒙克全球事務學院公民實驗室）, “微信朋友圈的圖像自動過濾功能之分析，” 第八屆USENIX有關互聯網上自由與開放交流的研習會（馬里蘭州巴爾的摩市），2018年8月14日。</blockquote>
+
+    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState(null, document.title, url + '#chinese-traditional'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state != 'tool') { location.hash = '#' + window.location.href.split('#')[1] }; }; return false">點擊這裡繼續。</span></p>
+
+    </td>
+    </tr>
+
+</table>
+
+<div>
+<label>Text:<br>
+<textarea id="textarea" name="text" rows="4" autofocus="autofocus" placeholder="Type your message here">Example</textarea>
+</label>
+<ul id="errors">
+</ul>
+</div>
+
+<div style="margin-right:-8px">
+
+<fieldset id="color" style="float:left">
+<legend>Color evasion</legend>
+<label><input type="radio" name="evasion" value="[255,0,0]" checked="checked">Red</label>
+<label><input type="radio" name="evasion" value="[255,255,0]">Yellow</label>
+<label><input type="radio" name="evasion" value="[0,255,0]">Green</label>
+<label><input type="radio" name="evasion" value="[0,255,255]">Cyan</label>
+<label><input type="radio" name="evasion" value="[0,0,255]">Blue</label>
+<label><input type="radio" name="evasion" value="[255,0,255]">Magenta</label>
+</fieldset>
+
+<fieldset id="pattern" style="float:left">
+<legend>Pattern evasion</legend>
+<label><input type="radio" name="evasion" value="squares">Squares</label>
+<label><input type="radio" name="evasion" value="letters">Letters</label>
+</fieldset>
+
+<p style="float:left;padding-top:6pt;margin-left:6pt;margin-bottom:0px;padding-bottom:0px;margin-right:8px">
+<a style="color:gray" id="saver">Save image</a>
+</p>
+
+</div>
+
+<div style="clear:both">
+<canvas style="margin-top:12pt;max-width:100%" id="canvas"></canvas>
+</div>
+
+</body>
+
+</html>
