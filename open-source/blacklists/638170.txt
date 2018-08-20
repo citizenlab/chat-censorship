@@ -1,0 +1,53 @@
+/zcqian/tjupt/blob/f5a75df82a06841f7ab12016b7f434da2f7346f4/lang/chs/lang_mybonus.php
+
+fuck
+shit
+pussy
+cunt
+nigger
+Staff Leader
+SysOp
+Administrator
+Moderator
+Uploader
+Retiree
+VIP
+Nexus Master
+Ultimate User
+Extreme User
+Veteran User
+Insane User
+Crazy User
+Elite User
+Power User
+User
+Peasant
+Champion
+主管
+程序员
+维护开发员
+管理员
+类管
+发布员
+养老族
+Admin
+PTadmin
+邓小平
+贺国强
+胡耀邦
+胡锦涛
+华国锋
+贾庆林
+李长春
+李克强
+刘少奇
+温家宝
+吴邦国
+习近平
+叶剑英
+毛泽东
+赵紫阳
+周恩来
+周永康
+朱德
+朱镕基
