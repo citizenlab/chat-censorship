@@ -16,5 +16,5 @@ This directory contains datasets of keywords, URLs, and images found blocked on 
 [Managing the Message: What you can’t say about the 19th National Communist Party Congress on WeChat](https://citizenlab.ca/2017/11/managing-message-censorship-19th-national-communist-party-congress-wechat/)
 * [Dataset](https://github.com/citizenlab/chat-censorship/tree/master/wechat/ncpc19)
 
-[(Can’t) Picture This An Analysis of Image Filtering on WeChat Moments](https://citizenlab.ca/2018/08/cant-picture-this-an-analysis-of-image-filtering-on-wechat-moments/) ([paper](https://www.usenix.org/system/files/conference/foci18/foci18-paper-knockel.pdf))
+[(Can’t) Picture This: An Analysis of Image Filtering on WeChat Moments](https://citizenlab.ca/2018/08/cant-picture-this-an-analysis-of-image-filtering-on-wechat-moments/) ([paper](https://www.usenix.org/system/files/conference/foci18/foci18-paper-knockel.pdf))
 * [Dataset](https://github.com/citizenlab/chat-censorship/tree/master/wechat/image-filtering)
