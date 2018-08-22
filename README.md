@@ -29,11 +29,19 @@ Data: [Original live-streaming data (2015)](https://github.com/citizenlab/chat-c
 
 ## Mobile games
 
-Our research on mobile games analyzes domestic Chinese games as well as international games that have been altered to comply with Chinese regulations.  Overall, we found hundreds of mobile games performing censorship, collectively censoring over 100,000 unique blacklist keywords.
+Our research on mobile games analyzes domestic Chinese games as well as international games that have been altered to comply with Chinese regulations.  Overall, we found hundreds of mobile games performing censorship, collectively censoring over 100,000 unique blacklisted keywords.
 
 * [Measuring Decentralization of Chinese Keyword Censorship via Mobile Games](https://www.usenix.org/conference/foci17/workshop-program/presentation/knockel)
 
 Data: [Mobile games](https://github.com/citizenlab/chat-censorship/tree/master/chinese-games)
+
+## Open source projects
+
+This research analyzes Chinese censorship in open source projects.  We extracted over 1,000 Chinese keyword blacklists from open source projects on GitHub, collectively spanning over 200,000 unique blacklisted keywords.
+
+* [The effect of information controls on developers in China: An analysis of censorship in Chinese open source projects](https://citizenlab.ca/wp-content/uploads/2018/08/nlp4if2018github-1.pdf)
+
+Data: [Open source blacklists](https://github.com/citizenlab/chat-censorship/tree/master/open-source)
 
 ## WeChat
 
