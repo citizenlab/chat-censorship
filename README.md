@@ -57,7 +57,7 @@ Data: [Keywords and URLs (November 2016)](https://github.com/citizenlab/chat-cen
 
 Keyword Content Analysis 
 ========
-Datasets include raw keyword lists collected from the applications.  Many also include processed data including translations and categorization of keywords.  Keywords were translated to English using combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes](https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book](https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv).
+Datasets include raw keyword lists collected from the applications.  Many also include processed data including translations and categorization of keywords.  Keywords were translated to English using a combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes](https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book](https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv).
 
 License
 ========
