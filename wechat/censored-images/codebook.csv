@@ -1,0 +1,10 @@
+Category,Description
+Event,Content is clearly related to a current or historical event
+Government,"Content is related to an organ of government, government leaders, government policies etc"
+Social Issue,"Content is related to an issue that affect a number of individuals or is considered problematic in a society such as public health, LBGTQ, nudity, illicit goods etc."
+Social Resistance,"Content is related to dissidents, petitions, whistle-blowers "
+Nationalism,Content is related to nationalistic sentiments
+Religion,Content is related to religion (excluding extremism)
+Terrorism,Terrorist content
+Misc,Context is unclear
+Duplicate,Image of the same content appear more than once in the dataset
