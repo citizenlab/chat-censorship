@@ -1,8 +1,6 @@
-
 ## Overview
 
-
-A collection of censored keywords related to the June 4 1989 Tiananmen Square Massacare collected from chat apps (WeChat, LINE, TOM-Skype, Sina UC) and live streaming platforms (YY, Sina Show, 9158, GuaGua)
+A [collection](https://github.com/citizenlab/chat-censorship/tree/master/june-4/june-4-censored-keywords.csv) of censored keywords related to the June 4 1989 Tiananmen Square Massacare collected from chat apps (WeChat, LINE, TOM-Skype, Sina UC) and live streaming platforms (YY, Sina Show, 9158, GuaGua)
 Each of these applications have client-side implementations of keyword censorship. 
 Through reverse engineering we extract the keyword lists and track updates to the lists over time.  
 
