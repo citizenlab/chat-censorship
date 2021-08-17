@@ -57,6 +57,8 @@ Data: [Keywords and URLs (November 2016)](https://github.com/citizenlab/chat-cen
 
 ## Apple engravings
 
+* [Engrave Danger: An Analysis of Apple Engraving Censorship across Six Regions](https://citizenlab.ca/2021/08/engrave-danger-an-analysis-of-apple-engraving-censorship-across-six-regions/)
+
 Our research measuring Apple's filtering of product engravings uses sample testing to discover keywords that cannot be engraved in each of six different regions: United States, Canada, Japan, Taiwan, Hong Kong, and mainland China.
 
 Data: [Keyword filtering rules](https://github.com/citizenlab/chat-censorship/tree/master/apple)
