@@ -57,17 +57,17 @@ Data: [Keywords and URLs (November 2016)](https://github.com/citizenlab/chat-cen
 
 ## Apple engravings
 
-* [Engrave Danger: An Analysis of Apple Engraving Censorship across Six Regions](https://citizenlab.ca/2021/08/engrave-danger-an-analysis-of-apple-engraving-censorship-across-six-regions/)
-
 Our research measuring Apple's filtering of product engravings uses sample testing to discover keywords that cannot be engraved in each of six different regions: United States, Canada, Japan, Taiwan, Hong Kong, and mainland China.
+
+* [Engrave Danger: An Analysis of Apple Engraving Censorship across Six Regions](https://citizenlab.ca/2021/08/engrave-danger-an-analysis-of-apple-engraving-censorship-across-six-regions/)
 
 Data: [Keyword filtering rules](https://github.com/citizenlab/chat-censorship/tree/master/apple)
 
 ## QQMail
 
-* [Measuring QQMail’s automated email censorship in China](https://dl.acm.org/doi/pdf/10.1145/3473604.3474560)
-
 On Tencent's QQMail, we discover that certain combinations of keywords being present in email messages triggers their censorship.  However, the presence of other combinations, which we call extenuating combinations, deactivates the censorship of some censored keywords.
+
+* [Measuring QQMail’s automated email censorship in China](https://dl.acm.org/doi/pdf/10.1145/3473604.3474560)
 
 Data: [Censored and extenuating keyword combinations](https://github.com/citizenlab/chat-censorship/tree/master/qqmail)
 
