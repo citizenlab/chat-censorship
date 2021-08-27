@@ -63,7 +63,15 @@ Our research measuring Apple's filtering of product engravings uses sample testi
 
 Data: [Keyword filtering rules](https://github.com/citizenlab/chat-censorship/tree/master/apple)
 
-Keyword Content Analysis 
+## QQMail
+
+* [Measuring QQMail’s automated email censorship in China](https://dl.acm.org/doi/pdf/10.1145/3473604.3474560)
+
+On Tencent's QQMail, we discover that certain combinations of keywords being present in email messages triggers their censorship.  However, the presence of other combinations, which we call extenuating combinations, deactivates the censorship of some censored keywords.
+
+Data: [Censored and extenuating keyword combinations](https://github.com/citizenlab/chat-censorship/tree/master/qqmail)
+
+Keyword Content Analysis
 ========
 Datasets include raw keyword lists collected from the applications.  Many also include processed data including translations and categorization of keywords.  Keywords were translated to English using a combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes](https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book](https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv).
 
