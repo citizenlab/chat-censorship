@@ -94,6 +94,14 @@ Testing Microsoft Bing's censorship of autosuggestions, we find Chinese politica
 
 Data: [Censored names](https://github.com/citizenlab/chat-censorship/tree/master/microsoft-bing)
 
+## Search engine censorship
+
+Across eight China-accessible search platforms analyzed — Baidu, Baidu Zhidao, Bilibili, Microsoft Bing, Douyin, Jingdong, Sogou, and Weibo — we discovered over 60,000 unique censorship rules used to partially or totally censor search results returned on these platforms. We investigated different levels of censorship affecting each platform, which might either totally block all results or selectively allow some through, and we applied novel methods to unambiguously and exactly determine the rules triggering each of these types of censorship across all platforms. Among web search engines Microsoft Bing and Baidu, Bing’s chief competitor in China, we found that, although Baidu has more censorship rules than Bing, Bing’s political censorship rules were broader and affected more search results than Baidu. Bing on average also restricted displaying search results from a greater number of website domains. These findings call into question the ability of non-Chinese technology companies to better resist censorship demands than their Chinese counterparts and serve as a dismal forecast concerning the ability of other non-Chinese technology companies to introduce search products or other services in China without integrating at least as many restrictions on political and religious expression as their Chinese competitors.
+
+* [Missing Links: A comparison of search censorship in China](https://citizenlab.ca/2023/04/a-comparison-of-search-censorship-in-china/)
+
+Data: [Censorship rules from testing people's names from Wikipedia](https://github.com/citizenlab/chat-censorship/tree/master/search/people), [Censorship rules from testing other platforms' rules](https://github.com/citizenlab/chat-censorship/tree/master/search/rules), [Ongoing censorship rules testing from news articles](https://github.com/citizenlab/chat-censorship/tree/master/search/ongoing), [Web search pre-authorized domains](https://github.com/citizenlab/chat-censorship/tree/master/search/authorized-domains)
+
 Keyword Content Analysis
 ========
 Datasets include raw keyword lists collected from the applications.  Many also include processed data including translations and categorization of keywords.  Keywords were translated to English using a combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes](https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book](https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv).
