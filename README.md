@@ -102,10 +102,6 @@ Across eight China-accessible search platforms analyzed — Baidu, Baidu Zhidao,
 
 Data: [Censorship rules from testing people's names from Wikipedia](https://github.com/citizenlab/chat-censorship/tree/master/search/people), [Censorship rules from testing other platforms' rules](https://github.com/citizenlab/chat-censorship/tree/master/search/rules), [Ongoing censorship rules testing from news articles](https://github.com/citizenlab/chat-censorship/tree/master/search/ongoing), [Web search pre-authorized domains](https://github.com/citizenlab/chat-censorship/tree/master/search/authorized-domains)
 
-Keyword Content Analysis
-========
-Datasets include raw keyword lists collected from the applications.  Many also include processed data including translations and categorization of keywords.  Keywords were translated to English using a combination of machine and human translation. Based on interpreting these translations with contextual information, we coded each keyword into content categories grouped under six general [themes](https://github.com/citizenlab/chat-censorship/blob/master/themes_keyword_censorship.csv) according to a [code book](https://github.com/citizenlab/chat-censorship/blob/master/categories_keyword_censorship.csv).
-
 License
 ========
 
