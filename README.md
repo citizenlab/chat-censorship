@@ -102,6 +102,57 @@ Across eight China-accessible search platforms analyzed — Baidu, Baidu Zhidao,
 
 Data: [Censorship rules from testing people's names from Wikipedia](https://github.com/citizenlab/chat-censorship/tree/master/search/people), [Censorship rules from testing other platforms' rules](https://github.com/citizenlab/chat-censorship/tree/master/search/rules), [Ongoing censorship rules testing from news articles](https://github.com/citizenlab/chat-censorship/tree/master/search/ongoing), [Web search pre-authorized domains](https://github.com/citizenlab/chat-censorship/tree/master/search/authorized-domains)
 
+## Online translator censorship
+
+Users rely on online translation services to faithfully translate text to or
+from their native language without silently omitting sentences depending those
+sentences’ ideas. However, in China, Internet censorship laws stifle what can
+be said politically or religiously. In this work, we analyzed the extent to
+which popular online translation services available in China censor their
+translations. We analyzed four services from Chinese companies — Alibaba,
+Baidu, Tencent, and Youdao — and one from an American company — Microsoft’s
+Bing Translate. Across the services, we found over 10,000 unique, automatically
+applied censorship rules and that all services implement automatic censorship
+rules that partially or completely omit content from users’ translations. Upon
+triggering censorship, the services will typically omit an offending line,
+sentence, or the translator’s entire output. All but one service — Alibaba —
+performed censorship silently and therefore possibly without the user’s
+knowledge. Our work reveals the unfortunate reality that, even if users in
+China have uncensored access to news or communications platforms, what they
+read or write may still be subject to automated censorship if they must
+translate between languages.
+
+* [Lost in Translation: Characterizing Automated Censorship in Online Translation Services](https://petsymposium.org/foci/2024/foci-2024-0018.pdf)
+
+Data: [Censorship data from the "people" test set](https://github.com/citizenlab/chat-censorship/tree/master/translator/people), [Censorship data from the "general" test set](https://github.com/citizenlab/chat-censorship/tree/master/translator/general)
+
+## Amazon censorship
+
+We analyzed the system Amazon deploys on the US “amazon.com” storefront to
+restrict shipments of certain products to specific regions. We found 17,050
+products that Amazon restricted from being shipped to at least one world
+region. While many of the shipping restrictions are related to regulations
+involving WiFi, car seats, and other heavily regulated product categories, the
+most common product category restricted by Amazon in our study was books.
+Banned books were largely related to LGBTIQ, the occult, erotica, Christianity,
+and health and wellness. The regions affected by this censorship were the UAE,
+Saudi Arabia, and many other Middle Eastern countries as well as Brunei
+Darussalam, Papua New Guinea, Seychelles, and Zambia. In our test sample,
+Amazon censored over 1.1% of the books sold on amazon.com in at least one of
+these regions.  We identified three major censorship blocklists which Amazon
+assigns to different regions. In numerous cases, the resulting censorship is
+either overly broad or miscategorized. Examples include the restriction of
+books relating to breast cancer, recipe books invoking “food porn” euphemisms,
+Nietzsche’s Gay Science, and “rainbow” Mentos candy.  To justify why restricted
+products cannot be shipped, Amazon uses varying error messages such as by
+conveying that an item is temporarily out of stock. In misleading its customers
+and censoring books, Amazon is violating its public commitments to both LGBTIQ
+and more broadly human rights.
+
+* [Banned Books: Analysis of Censorship on Amazon.com](https://citizenlab.ca/2024/11/analysis-of-censorship-on-amazon-com/)
+
+Data: [Censorship data from Phase 1 of our experiment](https://github.com/citizenlab/chat-censorship/tree/master/amazon/phase1), [Censorship data from Phase 2 of our experiment](https://github.com/citizenlab/chat-censorship/tree/master/amazon/phase2), [Data backing Figures 12, 13, and 14](https://github.com/citizenlab/chat-censorship/tree/master/amazon/figures)
+
 License
 ========
 
