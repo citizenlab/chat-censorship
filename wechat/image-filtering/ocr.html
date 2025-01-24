@@ -38,6 +38,14 @@ label {
 
 var RWT = 0.299; var GWT = 0.587; var BWT = 0.114;
 
+function getHash() {
+    var hash = window.location.href.split('#')[1];
+    if (typeof(hash) == 'undefined') {
+        return '';
+    }
+    return '#' + hash;
+}
+
 function loadPatternImage(name, base64, onload) {
     var patternImage = new Image();
     var blob = base64ToBlob(base64, 'image/png');
@@ -418,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     <blockquote>Jeffrey Knockel, Lotus Ruan, and Masashi Crete-Nishihata (The Citizen Lab, Munk School of Global Affairs, University of Toronto), “An analysis of automatic image filtering on WeChat Moments,” 8th USENIX Workshop on Free and Open Communications on the Internet (Baltimore, MD), 14 August 2018.</blockquote>
 
-    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState(null, document.title, url + '#english'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state != 'tool') { location.hash = '#' + window.location.href.split('#')[1] }; }; return false">Click here to continue.</span></p>
+    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState('hash', document.title, url + '#english'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state == 'hash') { location.hash = getHash(); }; }; return false">Click here to continue.</span></p>
 
     </div>
     </td>
@@ -438,7 +446,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     <blockquote>Jeffrey Knockel, Lotus Ruan, and Masashi Crete-Nishihata（多伦多大学蒙克全球事务学院公民实验室）, “微信朋友圈的图像自动过滤功能之分析，” 第八届USENIX有关互联网上自由与开放交流的研习会（马里兰州巴尔的摩市），2018年8月14日。</blockquote>
 
-    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState(null, document.title, url + '#chinese-simplified'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state != 'tool') { location.hash = '#' + window.location.href.split('#')[1] }; }; return false">点击这里继续。</span></p>
+    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState('hash', document.title, url + '#chinese-simplified'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state == 'hash') { location.hash = getHash(); }; }; return false">点击这里继续。</span></p>
 
     </div>
     </td>
@@ -458,8 +466,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     <blockquote>Jeffrey Knockel, Lotus Ruan, and Masashi Crete-Nishihata（多倫多大學蒙克全球事務學院公民實驗室）, “微信朋友圈的圖像自動過濾功能之分析，” 第八屆USENIX有關互聯網上自由與開放交流的研習會（馬里蘭州巴爾的摩市），2018年8月14日。</blockquote>
 
-    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState(null, document.title, url + '#chinese-traditional'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state != 'tool') { location.hash = '#' + window.location.href.split('#')[1] }; }; return false">點擊這裡繼續。</span></p>
+    <p><span style="color:blue;text-decoration:underline;cursor:pointer;" onclick="var d = document.getElementById('disclaimer'); d.style.display = 'none'; var url = window.location.href.split('#')[0]; history.replaceState('hash', document.title, url + '#chinese-traditional'); history.pushState('tool', document.title, url); window.onpopstate = function(e) { d.style.display = e.state == 'tool' ? 'none' : 'table'; if (e.state == 'hash') { location.hash = getHash(); }; }; return false">點擊這裡繼續。</span></p>
 
+    </div>
     </td>
     </tr>
 
