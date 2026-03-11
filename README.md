@@ -150,8 +150,9 @@ and censoring books, Amazon is violating its public commitments to both LGBTIQ
 and more broadly human rights.
 
 * [Banned Books: Analysis of Censorship on Amazon.com](https://citizenlab.ca/2024/11/analysis-of-censorship-on-amazon-com/)
+* Banned Books: Analysis of Censorship on Amazon.com (PETS paper)
 
-Data: [Censorship data from Phase 1 of our experiment](https://github.com/citizenlab/chat-censorship/tree/master/amazon/phase1), [Censorship data from Phase 2 of our experiment](https://github.com/citizenlab/chat-censorship/tree/master/amazon/phase2), [Data backing Figures 12, 13, and 14](https://github.com/citizenlab/chat-censorship/tree/master/amazon/figures)
+Data: [Censorship data from Phase 1 of our experiment](https://github.com/citizenlab/chat-censorship/tree/master/amazon/phase1), [Censorship data from Phase 2 of our experiment](https://github.com/citizenlab/chat-censorship/tree/master/amazon/phase2), [Censorship data from Phase 3 of our experiment](https://github.com/citizenlab/chat-censorship/tree/master/amazon/phase3), [Data backing multiple Figures](https://github.com/citizenlab/chat-censorship/tree/master/amazon/figures)
 
 License
 ========
